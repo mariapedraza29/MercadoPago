@@ -7,8 +7,9 @@ const mercadopago = require("mercadopago");
 app.use(express.json())
 app.use(cors());
 
-mercadopago.MercadoPagoConfig.access_token =
-	 "TEST-7522971752204517-030300-1442497d62373c82b99492c64b229a17-1708226957";
+mercadopago.configure({
+	access_token: "TEST-7522971752204517-030300-1442497d62373c82b99492c64b229a17-1708226957",
+});
 
 app.get("/", function (req,res) {
     res.send("el servidor de mercadopago funciona")
